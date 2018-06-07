@@ -49,6 +49,7 @@ public class RNGLContext extends ReactContextBaseJavaModule {
     public void addShader (final Integer id, final ReadableMap config, final Callback onCompile) {
         final String frag = config.getString("frag");
         final String name = config.getString("name");
+        final String vert = config.hasKey("vert") ? config.getString("vert") : STATIC_VERT;
         GLShaderData data = new GLShaderData(name, STATIC_VERT, frag);
         synchronized (this) {
             shaders.put(id, data);
