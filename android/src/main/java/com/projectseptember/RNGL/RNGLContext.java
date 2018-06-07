@@ -50,7 +50,7 @@ public class RNGLContext extends ReactContextBaseJavaModule {
         final String frag = config.getString("frag");
         final String name = config.getString("name");
         final String vert = config.hasKey("vert") ? config.getString("vert") : STATIC_VERT;
-        GLShaderData data = new GLShaderData(name, STATIC_VERT, frag);
+        GLShaderData data = new GLShaderData(name, vert, frag);
         synchronized (this) {
             shaders.put(id, data);
             if (onCompile != null) {
